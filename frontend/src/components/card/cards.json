@@ -1,0 +1,34 @@
+{
+    "cards": [
+        {
+            "imagePath": "/images/cardImages/SIM-logo.png",
+            "title": "SIM Logo",
+            "subtext": "Dit is het originele simlogo"
+        },
+        {
+            "imagePath": "/images/cardImages/SIM-logo 2.png",
+            "title": "SIM Logo",
+            "subtext": "Dit is niet het originele simlogo"
+        },
+        {
+            "imagePath": "/images/cardImages/SIM-logo.png",
+            "title": "SIM Logo 2",
+            "subtext": "Dit is het originele simlogo maar dan voor de tweede keer"
+        },
+        {
+            "imagePath": "/images/cardImages/SIM-logo 2.png",
+            "title": "SIM Logo 2",
+            "subtext": "Dit is niet het originele simlogo maar dan voor de tweede keer"
+        },
+        {
+            "imagePath": "/images/cardImages/SIM-logo.png",
+            "title": "SIM Logo 2",
+            "subtext": "Dit is niet het originele simlogo maar dan voor de derde keer"
+        },
+        {
+            "imagePath": "/images/cardImages/SIM-logo 2.png",
+            "title": "SIM Logo 2",
+            "subtext": "Dit is niet het originele simlogo maar dan voor de derde keer"
+        }
+    ]
+}
