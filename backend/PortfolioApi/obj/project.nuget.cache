@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KpUXqBcK74r74T+db4+30dORj5ZnSTpr1B/swgbxhezw5kvGURqAw3No55gAqYKCfZ0A7zrzRlIMJ3G6AKkshw==",
+  "dgSpecHash": "ZWRVtbm1UDXQ233dw9ZafGg9Zm9ZDAS4DkcKNi61ShH51iYvYxfRqxPg6ilRkbEmhG9xbub0ywE+RMlEv7Xr0g==",
   "success": true,
-  "projectFilePath": "C:\\Coding\\Projects\\portfolio-site\\backend\\PortfolioApi\\backend.csproj",
+  "projectFilePath": "C:\\Coding\\Projects\\Portfolio-site\\backend\\PortfolioApi\\backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Eric\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.1\\microsoft.aspnetcore.openapi.7.0.1.nupkg.sha512",
     "C:\\Users\\Eric\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

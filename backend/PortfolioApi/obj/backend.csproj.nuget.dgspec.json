@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Coding\\Projects\\portfolio-site\\backend\\PortfolioApi\\backend.csproj": {}
+    "C:\\Coding\\Projects\\Portfolio-site\\backend\\PortfolioApi\\backend.csproj": {}
   },
   "projects": {
-    "C:\\Coding\\Projects\\portfolio-site\\backend\\PortfolioApi\\backend.csproj": {
+    "C:\\Coding\\Projects\\Portfolio-site\\backend\\PortfolioApi\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Coding\\Projects\\portfolio-site\\backend\\PortfolioApi\\backend.csproj",
+        "projectUniqueName": "C:\\Coding\\Projects\\Portfolio-site\\backend\\PortfolioApi\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\Coding\\Projects\\portfolio-site\\backend\\PortfolioApi\\backend.csproj",
+        "projectPath": "C:\\Coding\\Projects\\Portfolio-site\\backend\\PortfolioApi\\backend.csproj",
         "packagesPath": "C:\\Users\\Eric\\.nuget\\packages\\",
-        "outputPath": "C:\\Coding\\Projects\\portfolio-site\\backend\\PortfolioApi\\obj\\",
+        "outputPath": "C:\\Coding\\Projects\\Portfolio-site\\backend\\PortfolioApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Eric\\AppData\\Roaming\\NuGet\\NuGet.Config"
