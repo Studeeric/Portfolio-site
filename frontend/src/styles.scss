@@ -1,6 +1,62 @@
+:root {
+    --primary-color: #222831;
+    --primary-color-darker: #191e24;
+    --secondary-color: #393E46;
+    --secondary-color-darker: #2a2e34;
+    --tertiary-color: #00ADB5;
+    --tertiary-color-darker: #008187;
+    --quartinary-color: #EEEEEE;
+    --quartinary-color-darker: #b2b2b2;
+}
+
 * {
     padding: 0;
     margin: 0;
+}
+
+html {
+    background-color: var(--primary-color);
+    color: var(--quartinary-color);
+}
+
+.NavBar {
+    background-color: var(--secondary-color);
+    height: 5em;
+    max-height: 5em;
+    display: flex;
+    justify-content: space-between;
+
+    &__Logo {
+        margin: 0.5em 0 0.5em 0.5em;
+        max-width: 100%;
+        max-height: 4em;
+    }
+
+    &__List {
+        display: flex;
+        height: inherit;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        overflow: hidden;
+    }
+
+    &__Item {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: inherit;
+        text-decoration: none;
+        padding: 0 2em 0 2em;
+
+        color: var(--quartinary-color);
+
+        &:hover {
+            background-color: var(--secondary-color-darker);
+        }
+    }
+
+
 }
 
 .Card {
@@ -31,8 +87,10 @@
         position: absolute;
         margin-left: auto;
         margin-right: auto;
+        padding: 1em;
+        width: 10em;
         left: 0;
         right: 0;
-        bottom: 0;
+        bottom: 1em;
     }
 }

@@ -460,19 +460,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Eric\\.nuget\\packages\\": {}
+    "C:\\Users\\Joseph95\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Coding\\Projects\\portfolio-site\\backend\\PortfolioApi\\backend.csproj",
+      "projectUniqueName": "C:\\Coding\\School\\Portfolio-site\\backend\\PortfolioApi\\backend.csproj",
       "projectName": "backend",
-      "projectPath": "C:\\Coding\\Projects\\portfolio-site\\backend\\PortfolioApi\\backend.csproj",
-      "packagesPath": "C:\\Users\\Eric\\.nuget\\packages\\",
-      "outputPath": "C:\\Coding\\Projects\\portfolio-site\\backend\\PortfolioApi\\obj\\",
+      "projectPath": "C:\\Coding\\School\\Portfolio-site\\backend\\PortfolioApi\\backend.csproj",
+      "packagesPath": "C:\\Users\\Joseph95\\.nuget\\packages\\",
+      "outputPath": "C:\\Coding\\School\\Portfolio-site\\backend\\PortfolioApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Eric\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Joseph95\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"

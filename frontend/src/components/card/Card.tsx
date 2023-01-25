@@ -10,21 +10,31 @@ interface ICard {
 
 const Card: React.FC = () => {
     const [card, setCard] = useState<ICard | null>();
+    const [currentWeather, setCurrentWeather] = useState();
 
-    function changeCard() {
+    async function changeCard() {
         var cardNumber = Math.floor(Math.random() * packageInfo.cards.length);
         setCard(packageInfo.cards[cardNumber])
+        await changeWeather();
+    }
+
+    async function changeWeather() {
+        const weather = await fetch("https://localhost:7172/WeatherForecast")
+                                .then(response => response.json())
+                                .then(data => data[0])
+        setCurrentWeather(weather.summary)        
     }
 
     useEffect(() => {
-        changeCard()
+        changeCard();
+        changeWeather();
     }, [])
 
     return (
         <div className="Card">
             <img className="Card__Image" src={card?.imagePath} alt="foto hier" />
             <h2 className="Card__Title">{card?.title}</h2>
-            <p className="Card__Subtext">{card?.subtext}</p>
+            <p className="Card__Subtext">{currentWeather}</p>
             <button className="Card__Button" onClick={changeCard}>Rerender</button>
         </div>
     )
