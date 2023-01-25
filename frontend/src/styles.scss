@@ -15,12 +15,19 @@
 }
 
 html {
-    background-color: var(--primary-color);
+    height: 100%;
+}
+
+body {
+    background: var(--primary-color);
+    background-image: linear-gradient(to top left, var(--primary-color-darker), 60%, var(--tertiary-color-darker));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--quartinary-color);
 }
 
 .NavBar {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color-darker);
     height: 5em;
     max-height: 5em;
     display: flex;
@@ -54,6 +61,10 @@ html {
         &:hover {
             background-color: var(--secondary-color-darker);
         }
+
+         .active {
+            background-color: var(--tertiary-color-darker);
+        }
     }
 
 
@@ -62,7 +73,8 @@ html {
 .Card {
     text-align: center;
     position: relative;
-    background-color: rgb(182, 224, 230);
+    background-color: var(--tertiary-color);
+    box-shadow: 0.3em 0.3em var(--secondary-color-darker);
     margin: 1em;
     padding: 1em;
     margin-left: auto;
