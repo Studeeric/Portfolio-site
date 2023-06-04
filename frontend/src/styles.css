@@ -78,6 +78,9 @@ body {
 .Card__Image {
   width: 100%;
 }
+.Card__Subtext {
+  height: 2em;
+}
 .Card__Button {
   position: absolute;
   margin-left: auto;
