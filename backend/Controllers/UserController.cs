@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -5,12 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 [ApiController]
 public class UserController : ControllerBase
 {
-    private readonly AppDbContext _dbContext;
+    private readonly IdentityDbContext<ApplicationUser> _dbContext;
 
-    public UserController(AppDbContext dbContext)
+    public UserController(IdentityDbContext<ApplicationUser> dbContext)
     {
         _dbContext = dbContext;
     }
+
 
     [HttpGet]
     public IActionResult GetAllUsers()
@@ -27,7 +30,7 @@ public class UserController : ControllerBase
             return BadRequest(ModelState);
         }
 
-        var user = new User
+        var user = new ApplicationUser
         {
             Name = userDTO.Name
         };

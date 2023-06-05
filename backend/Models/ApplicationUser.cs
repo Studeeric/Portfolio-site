@@ -1,17 +1,15 @@
 using System.ComponentModel.DataAnnotations;
-public class User
-{
-    [Key]
-    public int Id { get; set; }
+using Microsoft.AspNetCore.Identity;
 
+public class ApplicationUser : IdentityUser
+{
     [Required]
     public string Name { get; set; }
-
-    // Add more properties as needed
 }
+
 
 public class UserDTO
 {
     [Required]
-    public string Name {get; set;}
+    public string Name { get; set; }
 }
