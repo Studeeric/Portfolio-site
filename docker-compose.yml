@@ -12,28 +12,22 @@ services:
     image: mcr.microsoft.com/dotnet/sdk:7.0
     container_name: backend
     command: > 
-      bash -c "dotnet run"
+      bash -c "dotnet dev-certs https && dotnet run"
     working_dir: /app
     # depends_on:
       # - database
     volumes:
-      - ./backend2:/app
+      - ./backend:/app
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     scale: 1
     ports:
-      # - 5029:5029 #HTTPS
-      # - 7172:7172 #HTTPS
-      - 8080:5197
+      - 5029:5029 #HTTPS
+      - 7172:7172 #HTTPS
     expose:
       - 5197
     restart: unless-stopped
 
-  whoami:
-    image: "traefik/whoami"
-    container_name: "simple-service"
-    ports:
-      - 8081:80
 
     
   # frontend: #React frontend
