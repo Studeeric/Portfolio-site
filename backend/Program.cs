@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Identity;
+using MySql.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +17,7 @@ var connectionString = configuration.GetConnectionString("DefaultConnection");
 
 // Configure the database context with IdentityUser
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseMySQL(connectionString));
 
 // Configure Identity services
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
@@ -38,8 +39,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseSwagger();
-app.UseSwaggerUI();
 
 // app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000"));
 
