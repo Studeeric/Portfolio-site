@@ -19,7 +19,7 @@ const Card: React.FC = () => {
     }
 
     async function changeWeather() {
-        const weather = await fetch("https://localhost:7172/WeatherForecast")
+        const weather = await fetch("http://localhost:5029/WeatherForecast")
                                 .then(response => response.json())
                                 .then(data => data[0])
         setCurrentWeather(weather.summary)        
