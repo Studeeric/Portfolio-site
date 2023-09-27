@@ -13,7 +13,7 @@ builder.Services.AddCors();
 
 // Retrieve the connection string from appsettings.json
 var configuration = builder.Configuration;
-var connectionString = configuration.GetConnectionString("DefaultConnection");
+var connectionString = configuration.GetConnectionString("DefaultConnection") ?? throw new ArgumentNullException("DefaultConnection");
 
 // Configure the database context with IdentityUser
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -42,8 +42,7 @@ if (app.Environment.IsDevelopment())
 app.UseSwagger();
 app.UseSwaggerUI();
 
-// app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000"));
-
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 // app.UseHttpsRedirection();
 app.UseAuthentication(); // Add this line to enable authentication
 app.UseAuthorization();

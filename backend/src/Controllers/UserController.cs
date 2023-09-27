@@ -132,5 +132,12 @@ namespace backend.Controllers
         {
             return (_context.Users?.Any(e => e.Id == id)).GetValueOrDefault();
         }
+
+        [HttpGet("getRandom")]
+        public async Task<IActionResult> getRandomUser()
+        {
+            var user = await _context.Users.FirstOrDefaultAsync();
+            return Ok(user);
+        }
     }
 }

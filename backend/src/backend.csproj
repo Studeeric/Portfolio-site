@@ -4,6 +4,8 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+        <!-- The NETSDK1044 error shows up when building this project in docker because it is missing XML config files for every dependency. We have no use for these errors as all our dependencies are already compiled and present when building in docker -->
+    <NoWarn>NETSDK1004;</NoWarn> 
   </PropertyGroup>
 
   <ItemGroup>

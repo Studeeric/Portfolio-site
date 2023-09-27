@@ -50,9 +50,9 @@ services:
       - ./frontend:/app
     environment:
       - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true 
+      - WDS_SOCKET_PORT=443
     scale: 1
     ports:
       - 8080:3000
-    expose:
-      - 3000
     restart: unless-stopped
