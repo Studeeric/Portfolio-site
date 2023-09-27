@@ -5,6 +5,7 @@
 
 backend/obj
 /database
+.vscode
 
 # User-specific files
 *.rsuser
