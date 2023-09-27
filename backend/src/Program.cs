@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Identity;
-using MySql.EntityFrameworkCore;
+using backend.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,11 +13,11 @@ builder.Services.AddCors();
 
 // Retrieve the connection string from appsettings.json
 var configuration = builder.Configuration;
-var connectionString = configuration.GetConnectionString("DefaultConnection") ?? throw new ArgumentNullException("DefaultConnection");
+var connectionString = configuration.GetConnectionString("SqliteConnection");
 
 // Configure the database context with IdentityUser
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseMySQL(connectionString));
+    options.UseSqlite(connectionString));
 
 // Configure Identity services
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
@@ -32,17 +32,11 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
 app.UseSwagger();
 app.UseSwaggerUI();
 
-app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+// app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000"));
+
 // app.UseHttpsRedirection();
 app.UseAuthentication(); // Add this line to enable authentication
 app.UseAuthorization();

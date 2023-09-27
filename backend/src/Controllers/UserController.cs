@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using backend.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -131,13 +132,6 @@ namespace backend.Controllers
         private bool ApplicationUserExists(string id)
         {
             return (_context.Users?.Any(e => e.Id == id)).GetValueOrDefault();
-        }
-
-        [HttpGet("getRandom")]
-        public async Task<IActionResult> getRandomUser()
-        {
-            var user = await _context.Users.FirstOrDefaultAsync();
-            return Ok(user);
         }
     }
 }

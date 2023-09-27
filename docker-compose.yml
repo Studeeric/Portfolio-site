@@ -1,58 +1,28 @@
 version: "3"
 services:
 
-  database:
-    image: mysql
-    restart: always
-    container_name: database
-    environment:
-      MYSQL_DATABASE: 'db'
-      MYSQL_USER: 'Eric'
-      MYSQL_PASSWORD: 'String1!'
-      MYSQL_ROOT_PASSWORD: 'String1!'
-    ports:
-      - '3306:3306'
-    expose:
-      - '3306'
-    volumes:
-      - ./database:/var/lib/mysql
 
   backend: #Dotnet webapi
-    image: mcr.microsoft.com/dotnet/sdk:7.0
+    image: portfolio-backend
+    build: ./backend
     container_name: backend
-    command: > 
-      bash -c "dotnet dev-certs https && dotnet run"
-    working_dir: /app
-    depends_on:
-      - database
-    volumes:
-      - ./backend:/app
+    restart: unless-stopped
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-    scale: 1
     ports:
-      - 5029:5029 #HTTPS
-      - 7172:7172 #HTTPS
-    expose:
-      - 5197
-    restart: unless-stopped
+      - 8081:80
+    volumes:
+      - ./database:/publish/Database
+    
 
 
     
   frontend: #React frontend
-    image: node
+    image: portfolio-frontend
+    build: ./frontend
     container_name: frontend
-    command: ["npm", "start"]
-    working_dir: /app
-    # depends_on:
-    #   - backend
-    volumes:
-      - ./frontend:/app
+    restart: unless-stopped
     environment:
       - CHOKIDAR_USEPOLLING=true
-      - WATCHPACK_POLLING=true 
-      - WDS_SOCKET_PORT=443
-    scale: 1
     ports:
-      - 8080:3000
-    restart: unless-stopped
+      - 8080:80
