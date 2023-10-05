@@ -1,7 +1,6 @@
 version: "3"
+
 services:
-
-
   backend: #Dotnet webapi
     image: portfolio-backend
     build: ./backend
@@ -14,9 +13,6 @@ services:
     volumes:
       - ./database:/publish/Database
     
-
-
-    
   frontend: #React frontend
     image: portfolio-frontend
     build: ./frontend
@@ -26,3 +22,17 @@ services:
       - CHOKIDAR_USEPOLLING=true
     ports:
       - 8080:80
+
+  Nginx-Proxy-Manager:
+    container_name: Nginx
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Amsterdam
+    ports:
+      - '80:80'
+      - '8082:81'
+      - '443:443'
+    volumes:
+      - ./Proxy/NPM/Data:/data
+      - ./Proxy/NPM/letsencrypt:/etc/letsencrypt
